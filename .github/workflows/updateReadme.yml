@@ -15,6 +15,8 @@ jobs:
         run: |
           sed -i "s/\[Datum\]\-\[Thema\]/$(basename `git rev-parse --show-toplevel`)/g" README.md
           sed -i "s/\[repo\-name\]/$(basename `git rev-parse --show-toplevel`)/g" README.md
+          git config --global user.email "herbert.nikolajewski@digitalcareerinstitute.org"
+          git config --global user.name "herbertnikolajewskidci"
           git add README.md
           git commit -m "Update README"
           git push origin main
