@@ -13,9 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Replace placeholders in README
-        uses: Readme-Workflows/readme-replacer@v1.0.0
+        uses: Readme-Workflows/readme-replacer@v1.0.1
         with:
-          readme-path: 'README.md'
+          TEMPLATE_FILE: 'README.md'
+          COMMIT_FILE: 'README.md'
           replacements: |
             [Datum]-[Thema]: ${{ github.repository }}
             [repo-name]: ${{ github.repository }}
