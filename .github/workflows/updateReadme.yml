@@ -13,8 +13,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Replace placeholders in README
-        uses: jacobtomlinson/gha-find-replace@v3
+        uses: Readme-Workflows/readme-replacer@v1.0.0
         with:
-          find: '[Datum]-[Thema]'
-          replace: ${{ github.repository }}
-          include: 'README.md'
+          readme-path: 'README.md'
+          replacements: |
+            [Datum]-[Thema]: ${{ github.repository }}
+            [repo-name]: ${{ github.repository }}
