@@ -15,8 +15,8 @@ jobs:
       - name: Replace placeholders in README
         uses: Readme-Workflows/readme-replacer@v1.0.1
         with:
-          TEMPLATE_FILE: 'README.md'
-          COMMIT_FILE: 'README.md'
+          TEMPLATE_FILE: './README.md'
+          COMMIT_FILE: './README.md'
           replacements: |
             [Datum]-[Thema]: ${{ github.repository }}
             [repo-name]: ${{ github.repository }}
