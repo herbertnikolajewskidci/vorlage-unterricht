@@ -17,6 +17,4 @@ jobs:
         with:
           TEMPLATE_FILE: './README.md'
           COMMIT_FILE: './README.md'
-          replacements: |
-            [Datum]-[Thema]: ${{ github.repository }}
-            [repo-name]: ${{ github.repository }}
+          
