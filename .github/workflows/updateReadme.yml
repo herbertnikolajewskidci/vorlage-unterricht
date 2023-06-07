@@ -10,15 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Update README
-        run: |
-          sed -i "s/\[Datum\]\-\[Thema\]/$(basename `git rev-parse --show-toplevel`)/g" README.md
-          sed -i "s/\[repo\-name\]/$(basename `git rev-parse --show-toplevel`)/g" README.md
-          git config --global user.email "herbert.nikolajewski@digitalcareerinstitute.org"
-          git config --global user.name "herbertnikolajewskidci"
-          git add README.md
-          git commit -m "Update README"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        uses: actions/checkout@v2
+
+      - name: Replace placeholders in README
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: '[Datum]-[Thema]'
+          replace: ${{ github.repository }}
+          include: 'README.md'
