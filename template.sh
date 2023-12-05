@@ -31,3 +31,9 @@ git commit -m "updated README.md"
 git push
 
 git checkout main
+
+rm template.sh
+
+git add .
+git commit -m "template.sh removed"
+git push
