@@ -22,7 +22,7 @@ git add .
 git commit -m "updated README.md"
 git push
 
-git checkout final
+git checkout final-teacher
 
 sed -i "s/\[Datum\]\-\[Thema\]/$new_text/ig" README.md
 
